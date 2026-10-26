@@ -4,14 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دیجی‌کالا | فروشگاه اینترنتی</title>
-    
-    <!-- فونت وزیرمتن -->
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script>
@@ -19,9 +13,7 @@
             theme: {
                 extend: {
                     fontFamily: { sans: ['Vazirmatn', 'sans-serif'] },
-                    colors: {
-                        dk: { red: '#ef4056', dark: '#3f4064', gray: '#f0f0f1', text: '#62666d' }
-                    }
+                    colors: { dk: { red: '#ef4056', dark: '#3f4064', gray: '#f0f0f1', text: '#62666d' } }
                 }
             }
         }
@@ -37,22 +29,22 @@
 
     <!-- هدر دیجی‌کالا -->
     <header class="bg-white shadow-sm sticky top-0 z-40 border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-2">
             <!-- لوگو -->
             <div class="flex items-center gap-2">
-                <div class="text-dk-red font-black text-3xl tracking-tighter">DigiKala</div>
+                <div class="text-dk-red font-black text-2xl sm:text-3xl tracking-tighter">DigiKala</div>
             </div>
 
             <!-- نوار جستجو -->
-            <div class="flex-1 max-w-2xl relative">
+            <div class="flex-1 max-w-xl relative hidden sm:block">
                 <input type="text" id="searchInput" oninput="handleSearch()" placeholder="جستجو در همه کالاها..." 
                        class="w-full bg-[#f0f0f1] border-none rounded-lg py-2.5 pr-11 pl-4 text-sm focus:outline-none focus:ring-2 focus:ring-dk-red/20 transition">
                 <i class="fa-solid fa-magnifying-glass absolute right-4 top-3.5 text-gray-400"></i>
             </div>
 
-            <!-- دکمه‌های سمت چپ -->
-            <div class="flex items-center gap-4">
-                <button onclick="openRegisterModal()" class="hidden md:flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-lg text-sm hover:bg-gray-50 transition">
+            <!-- دکمه‌های سمت چپ (اکانت و سبد خرید) -->
+            <div class="flex items-center gap-2 sm:gap-4">
+                <button onclick="openRegisterModal()" class="flex items-center gap-2 border border-gray-300 px-2 sm:px-4 py-2 rounded-lg text-xs sm:text-sm hover:bg-gray-50 transition">
                     <i class="fa-regular fa-user text-gray-500"></i>
                     <span>ورود | ثبت نام</span>
                 </button>
@@ -67,53 +59,40 @@
     <!-- بنر بالای صفحه -->
     <section class="max-w-7xl mx-auto px-4 py-4 w-full">
         <div class="bg-gradient-to-l from-dk-red to-red-600 rounded-2xl p-6 sm:p-10 text-white flex items-center justify-between shadow-lg">
-            <div class="space-y-2">
-                <h1 class="text-2xl sm:text-3xl font-bold">فروشگاه اینترنتی دیجی‌کالا</h1>
-                <p class="text-red-100 text-sm">خرید آنلاین با ارسال سریع و ضمانت اصالت کالا</p>
-            </div>
-            <div class="hidden sm:flex gap-2">
-                <span class="bg-white/20 px-3 py-1 rounded-full text-sm"><i class="fa-solid fa-truck-fast ml-1"></i> ارسال رایگان</span>
-                <span class="bg-white/20 px-3 py-1 rounded-full text-sm"><i class="fa-solid fa-shield-halved ml-1"></i> ۷ روز ضمانت</span>
+            <div class="space-y-2 text-center sm:text-right w-full sm:w-auto">
+                <h1 class="text-xl sm:text-3xl font-bold">فروشگاه اینترنتی دیجی‌کالا</h1>
+                <p class="text-red-100 text-xs sm:text-sm">خرید آنلاین با ارسال سریع و ضمانت اصالت کالا</p>
             </div>
         </div>
     </section>
 
     <!-- دسته بندی‌های آیکون‌دار -->
-    <section class="max-w-7xl mx-auto px-4 py-4 w-full">
+    <section class="max-w-7xl mx-auto px-4 py-2 w-full">
         <div class="bg-white rounded-2xl p-4 flex justify-between items-center overflow-x-auto scrollbar-none gap-6">
-            <div class="flex flex-col items-center gap-2 text-xs text-gray-600 hover:text-dk-red cursor-pointer transition">
+            <div class="flex flex-col items-center gap-2 text-xs text-gray-600 hover:text-dk-red cursor-pointer">
                 <i class="fa-solid fa-mobile-screen text-2xl text-gray-400"></i><span>موبایل</span>
             </div>
-            <div class="flex flex-col items-center gap-2 text-xs text-gray-600 hover:text-dk-red cursor-pointer transition">
+            <div class="flex flex-col items-center gap-2 text-xs text-gray-600 hover:text-dk-red cursor-pointer">
                 <i class="fa-solid fa-laptop text-2xl text-gray-400"></i><span>لپ‌تاپ</span>
             </div>
-            <div class="flex flex-col items-center gap-2 text-xs text-gray-600 hover:text-dk-red cursor-pointer transition">
+            <div class="flex flex-col items-center gap-2 text-xs text-gray-600 hover:text-dk-red cursor-pointer">
                 <i class="fa-solid fa-headphones text-2xl text-gray-400"></i><span>هدفون</span>
             </div>
-            <div class="flex flex-col items-center gap-2 text-xs text-gray-600 hover:text-dk-red cursor-pointer transition">
+            <div class="flex flex-col items-center gap-2 text-xs text-gray-600 hover:text-dk-red cursor-pointer">
                 <i class="fa-solid fa-clock text-2xl text-gray-400"></i><span>ساعت</span>
             </div>
-            <div class="flex flex-col items-center gap-2 text-xs text-gray-600 hover:text-dk-red cursor-pointer transition">
+            <div class="flex flex-col items-center gap-2 text-xs text-gray-600 hover:text-dk-red cursor-pointer">
                 <i class="fa-solid fa-gamepad text-2xl text-gray-400"></i><span>کنسول بازی</span>
-            </div>
-            <div class="flex flex-col items-center gap-2 text-xs text-gray-600 hover:text-dk-red cursor-pointer transition">
-                <i class="fa-solid fa-camera text-2xl text-gray-400"></i><span>دوربین</span>
-            </div>
-            <div class="flex flex-col items-center gap-2 text-xs text-gray-600 hover:text-dk-red cursor-pointer transition">
-                <i class="fa-solid fa-tv text-2xl text-gray-400"></i><span>تلویزیون</span>
             </div>
         </div>
     </section>
 
-    <!-- عنوان محصولات -->
-    <div class="max-w-7xl mx-auto px-4 w-full flex justify-between items-center mb-2">
-        <h2 class="text-lg font-bold">پیشنهاد شگفت‌انگیز</h2>
-        <span class="text-dk-red text-sm cursor-pointer">مشاهده همه <i class="fa-solid fa-angle-left text-xs"></i></span>
-    </div>
-
     <!-- گريد محصولات -->
-    <main class="max-w-7xl mx-auto px-4 pb-12 flex-1 w-full">
-        <div id="productGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"></div>
+    <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-lg font-bold">پیشنهاد شگفت‌انگیز</h2>
+        </div>
+        <div id="productGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4"></div>
     </main>
 
     <!-- سبد خرید (کشو) -->
@@ -122,18 +101,18 @@
         <div class="absolute inset-y-0 left-0 max-w-full w-80 bg-white shadow-2xl flex flex-col transform -translate-x-full transition-transform duration-300" id="cartPanel">
             <div class="p-4 border-b flex justify-between items-center">
                 <h3 class="font-bold">سبد خرید شما</h3>
-                <button onclick="toggleCartDrawer()" class="text-gray-400 hover:text-dk-red"><i class="fa-solid fa-xmark text-lg"></i></button>
+                <button onclick="toggleCartDrawer()" class="text-gray-400"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
             <div id="cartItems" class="flex-1 overflow-y-auto p-4 space-y-4"></div>
             <div class="p-4 border-t space-y-3">
                 <div class="flex justify-between text-sm"><span>مبلغ قابل پرداخت:</span><span id="cartTotalPrice" class="font-bold text-dk-red">۰ تومان</span></div>
-                <button onclick="checkout()" class="w-full bg-dk-red text-white font-bold py-2 rounded-lg text-sm hover:bg-red-600 transition">ثبت سفارش</button>
+                <button onclick="checkout()" class="w-full bg-dk-red text-white font-bold py-2 rounded-lg text-sm">ثبت سفارش</button>
             </div>
         </div>
     </div>
 
-    <!-- مودال ثبت‌نام -->
-    <div id="registerModal" class="fixed inset-0 z-50 hidden flex items-center justify-center modal-bg transition-opacity duration-300">
+    <!-- مودال ثبت‌نام (اکانت) -->
+    <div id="registerModal" class="fixed inset-0 z-50 hidden flex items-center justify-center modal-bg">
         <div class="bg-white rounded-2xl p-6 w-[90%] max-w-sm shadow-2xl relative">
             <button onclick="closeRegisterModal()" class="absolute top-4 left-4 text-gray-400 hover:text-dk-red"><i class="fa-solid fa-xmark text-xl"></i></button>
             <div class="text-center mb-6 mt-2">
@@ -148,36 +127,31 @@
         </div>
     </div>
 
-    <!-- فوتور -->
     <footer class="bg-white border-t py-6 text-center text-xs text-gray-500">
         <p>© ۱۴۰۳ تمامی حقوق برای دیجی‌کالا (نسخه آزمایشی) محفوظ است.</p>
-        <p class="mt-2 text-gray-400">طراحی شده با HTML, CSS, JavaScript</p>
     </footer>
 
-    <!-- اسکریپت‌ها -->
     <script>
-        // تابع تولید عکس از سرویس placehold.co (تضمینی لود میشه)
-        function getImg(id) {
-            return `https://placehold.co/400x400/ef4056/ffffff?text=Product+${id}`;
+        // تابع تولید عکس با آیکون‌های وکتوری (SVG) که 100% لود می‌شوند
+        function getImg(icon) {
+            const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+                <rect width="400" height="400" fill="#f0f0f1"/>
+                <text x="200" y="240" font-size="150" text-anchor="middle" fill="#ef4056">${icon}</text>
+            </svg>`;
+            return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
         }
 
         const products = [
-            { id: 1, title: 'گوشی موبایل سامسونگ گلکسی S24', price: 45000000, old: 48000000, rating: 4.8, reviews: 1200, img: getImg(1), badge: 'شگفت‌انگیز' },
-            { id: 2, title: 'لپ‌تاپ ایسوس مدل ROG Strix', price: 68000000, old: 72000000, rating: 4.9, reviews: 850, img: getImg(2), badge: 'شگفت‌انگیز' },
-            { id: 3, title: 'هدفون بی‌سیم اپل ایرپادز پرو', price: 8500000, old: 9200000, rating: 4.7, reviews: 3200, img: getImg(3), badge: 'شگفت‌انگیز' },
-            { id: 4, title: 'ساعت هوشمند اپل واچ سری 9', price: 22000000, old: 24000000, rating: 4.6, reviews: 540, img: getImg(4), badge: 'شگفت‌انگیز' },
-            { id: 5, title: 'کنسول بازی پلی استیشن 5 اسلیم', price: 35000000, old: 38000000, rating: 4.9, reviews: 2100, img: getImg(5), badge: 'شگفت‌انگیز' },
-            { id: 6, title: 'دوربین بدون آینه سونی Alpha A7', price: 120000000, old: 125000000, rating: 4.8, reviews: 320, img: getImg(6), badge: 'شگفت‌انگیز' },
-            { id: 7, title: 'تلویزیون هوشمند ال جی 55 اینچ', price: 42000000, old: 45000000, rating: 4.5, reviews: 780, img: getImg(7), badge: '' },
-            { id: 8, title: 'پایه نگهدارنده موبایل مگ‌سیف', price: 850000, old: 1100000, rating: 4.4, reviews: 150, img: getImg(8), badge: '' },
-            { id: 9, title: 'کیبورد مکانیکال گیمینگ ریزر', price: 4500000, old: 5200000, rating: 4.7, reviews: 620, img: getImg(9), badge: '' },
-            { id: 10, title: 'ماوس بی‌سیم لاجیتک MX Master 3', price: 5800000, old: 6100000, rating: 4.8, reviews: 910, img: getImg(10), badge: '' },
-            { id: 11, title: 'پاوربانک انکر 20000 میلی‌آمپر', price: 2200000, old: 2500000, rating: 4.6, reviews: 1800, img: getImg(11), badge: '' },
-            { id: 12, title: 'هارد اکسترنال وسترن دیجیتال 2TB', price: 6500000, old: 7000000, rating: 4.5, reviews: 430, img: getImg(12), badge: '' },
-            { id: 13, title: 'تبلت سامسونگ گلکسی تب S9', price: 28000000, old: 30000000, rating: 4.7, reviews: 290, img: getImg(13), badge: '' },
-            { id: 14, title: 'اسپیکر بلوتوثی JBL Charge 5', price: 4800000, old: 5200000, rating: 4.8, reviews: 1400, img: getImg(14), badge: '' },
-            { id: 15, title: 'میکروفون استریمینگ هایپرایکس', price: 3800000, old: 4100000, rating: 4.4, reviews: 210, img: getImg(15), badge: '' },
-            { id: 16, title: 'مانیتور گیمینگ 27 اینچ ایسوس', price: 18500000, old: 20000000, rating: 4.6, reviews: 670, img: getImg(16), badge: '' }
+            { id: 1, title: 'گوشی موبایل سامسونگ گلکسی S24', price: 45000000, old: 48000000, rating: 4.8, reviews: 1200, icon: "📱", badge: 'شگفت‌انگیز' },
+            { id: 2, title: 'لپ‌تاپ ایسوس مدل ROG Strix', price: 68000000, old: 72000000, rating: 4.9, reviews: 850, icon: "💻", badge: 'شگفت‌انگیز' },
+            { id: 3, title: 'هدفون بی‌سیم اپل ایرپادز پرو', price: 8500000, old: 9200000, rating: 4.7, reviews: 3200, icon: "🎧", badge: 'شگفت‌انگیز' },
+            { id: 4, title: 'ساعت هوشمند اپل واچ سری 9', price: 22000000, old: 24000000, rating: 4.6, reviews: 540, icon: "⌚", badge: 'شگفت‌انگیز' },
+            { id: 5, title: 'کنسول بازی پلی استیشن 5 اسلیم', price: 35000000, old: 38000000, rating: 4.9, reviews: 2100, icon: "🎮", badge: 'شگفت‌انگیز' },
+            { id: 6, title: 'دوربین بدون آینه سونی Alpha A7', price: 120000000, old: 125000000, rating: 4.8, reviews: 320, icon: "📷", badge: '' },
+            { id: 7, title: 'تلویزیون هوشمند ال جی 55 اینچ', price: 42000000, old: 45000000, rating: 4.5, reviews: 780, icon: "📺", badge: '' },
+            { id: 8, title: 'پایه نگهدارنده موبایل مگ‌سیف', price: 850000, old: 1100000, rating: 4.4, reviews: 150, icon: "📱", badge: '' },
+            { id: 9, title: 'کیبورد مکانیکال گیمینگ ریزر', price: 4500000, old: 5200000, rating: 4.7, reviews: 620, icon: "⌨️", badge: '' },
+            { id: 10, title: 'ماوس بی‌سیم لاجیتک MX Master 3', price: 5800000, old: 6100000, rating: 4.8, reviews: 910, icon: "🖱️", badge: '' }
         ];
 
         let cart = [];
@@ -187,17 +161,14 @@
 
         function renderProducts(items) {
             const grid = document.getElementById('productGrid');
-            if (items.length === 0) {
-                grid.innerHTML = `<div class="col-span-full text-center py-10 text-gray-500">محصولی یافت نشد.</div>`;
-                return;
-            }
             grid.innerHTML = items.map(p => {
                 const discount = Math.round(((p.old - p.price) / p.old) * 100);
+                const imgData = getImg(p.icon);
                 return `
-                    <div class="bg-white rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col justify-between p-3 border border-gray-100 group">
+                    <div class="bg-white rounded-xl overflow-hidden hover:shadow-lg transition flex flex-col justify-between p-3 border border-gray-100 group">
                         <div>
                             <div class="relative aspect-square overflow-hidden rounded-lg bg-gray-50 mb-3">
-                                <img src="${p.img}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <img src="${imgData}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 ${discount > 0 ? `<span class="absolute top-2 right-2 bg-dk-red text-white text-[10px] font-bold px-2 py-1 rounded">${toPersianDigits(discount)}٪</span>` : ''}
                             </div>
                             <h3 class="text-xs sm:text-sm font-semibold text-gray-800 line-clamp-2 h-10 leading-5">${p.title}</h3>
@@ -267,7 +238,6 @@
             const badge = document.getElementById('cartBadge');
             const cartItemsContainer = document.getElementById('cartItems');
             const totalPriceEl = document.getElementById('cartTotalPrice');
-            
             const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
             const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
@@ -277,7 +247,6 @@
                 badge.classList.add('flex');
             } else {
                 badge.classList.add('hidden');
-                badge.classList.remove('flex');
             }
             totalPriceEl.textContent = formatPrice(totalPrice);
 
@@ -288,7 +257,7 @@
 
             cartItemsContainer.innerHTML = cart.map(item => `
                 <div class="flex gap-3 items-center">
-                    <img src="${item.img}" class="w-14 h-14 rounded-lg object-cover border">
+                    <div class="w-12 h-12 rounded-lg flex items-center justify-center bg-gray-100 text-2xl">${item.icon}</div>
                     <div class="flex-1">
                         <p class="text-xs font-bold line-clamp-1">${item.title}</p>
                         <span class="text-xs text-gray-500">${formatPrice(item.price)}</span>
@@ -310,7 +279,7 @@
             toggleCartDrawer(false);
         }
 
-        // --- بخش ثبت‌نام و مودال ---
+        // --- بخش اکانت و ثبت‌نام ---
         function openRegisterModal() {
             document.getElementById('registerModal').classList.remove('hidden');
             setTimeout(() => document.getElementById('phoneInput').focus(), 100);
@@ -332,7 +301,6 @@
             document.getElementById('phoneInput').value = '';
         }
 
-        // اجرای اولیه
         renderProducts(products);
     </script>
 </body>
